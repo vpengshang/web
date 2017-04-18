@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>行为模式</title>
+</head>
+
+<body>
+   <input type="file" name="file" id="myfile"/>
+   <p class="path"></p>
+   <div class="show" id="show"></div>
+</body>
+<script type="text/javascript">
+window.onload=function(){
+    var preview=document.getElementById("show");
+	function setSelectFileBehavior(subjects){
+
+		if(!Array.isArray()){
+			if(subjects.length) subjects=Array.from(subjects);
+			else subjects=[subjects];
+		}
+		subjects.forEach(function(subject){
+            subject.addEventListener('change',function(evt){
+            	var fileInput=evt.target;
+            	var files=Array.from(fileInput.files);
+            	var URL=window.URL||window.webkitURL;
+
+            	if(typeof FileReader === "function"){
+            		files.forEach(function(file){
+            			var reader=new FileReader();
+            			reader.readAsDataURL(file);
+            			reader.onload=function(evt){
+            				var event =new CustomEvent("fileselect",{
+            					detail:{
+            						dataURL:evt.target.result
+            					}
+            				});
+            				subject.dispatchEvent(event);
+            			};
+            		});
+            	}else if(URL){
+            		files.forEach(function(file){
+            			var blob=URL.createObjectURL(file);
+            			var event=new CustomEvent("fileselect",{
+            				datail:{bolb:blob}
+            		   });
+            			subject.dispatchEvent(event);
+            		});
+            	}
+            });
+		});
+	}
+ 
+   var selectFile=document.getElementById("myfile");
+   setSelectFileBehavior(selectFile);
+
+   selectFile.addEventListener('change',function(evt){
+   	   preview.innerHTML=' ';
+   });
+
+ selectFile.addEventListener('fileselect',function(evt){
+ 	 var img=new Image();
+ 	 img.src=evt.detail.dataURL||evt.detail.dataURL;
+ 	 console.log(img.src);
+ 	 img.style.padding='5px';
+ 	 img.style.height='150px';
+ 	 preview.appendChild(img);
+  });
+
+ };
+</script>
+</html>

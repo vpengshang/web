@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background: url(../img/backImg.jpg);
+}
+/* 导航条设置*/
+.navbar {
+  font-size: 18px;
+  color: #fff;
+}
+.navbar .tips {
+  display: none;
+  position: absolute;
+  bottom: -20px;
+  color: #0dd47a;
+}
+.navbar .navbar-brand {
+  padding-top: 0px;
+}
+.navbar a {
+  color: rgba(255, 255, 255, 0.7);
+}
+.navbar li > a:hover,
+.navbar li > a:active,
+.navbar li > a:visited,
+.navbar li > a:focus {
+  background-color: transparent;
+}
+.navbar .navbar-text {
+  display: inline-block;
+}
+.navbar a:hover {
+  cursor: default;
+  color: #FFF;
+}
+.navbar .nav li > a:hover span {
+  width: 36px;
+}
+.navbar .nav li > a span {
+  /*a连接下部分动画*/
+  position: absolute;
+  width: 0px;
+  height: 2px;
+  bottom: 4px;
+  left: 15px;
+  background: #86fc2f;
+  -webkit-transition: width .25s linear;
+  transition: width .25s linear;
+}
+.navbar .navbar-brand img {
+  border: 1px solid #333;
+  border-radius: 50%;
+}
+.navbar .navbar-brand:hover .tips {
+  display: block;
+}
+.navbar .navbar-brand:hover img {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  opacity: 0.3;
+}
+.navbar .navbar-toggle {
+  border-color: #fff;
+}
+.navbar .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar .navbar-form {
+  /*设置navbar搜索框样式*/
+}
+.navbar .navbar-form .input-group input,
+.navbar .navbar-form .input-group button {
+  background: transparent;
+}
+.navbar .navbar-form .input-group {
+  overflow: hidden;
+}
+.navbar .navbar-form .input-group input {
+  padding: 0px;
+  border: 0px;
+  border-bottom: 2px solid #86fc2f;
+  font-weight: bold;
+  width: 70px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  overflow: hidden;
+}
+.navbar .navbar-form .input-group input:focus {
+  box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.075), 0 0 0px rgba(102, 175, 233, 0.6);
+}
+.navbar .navbar-form .input-group:hover input {
+  display: inline-block;
+  color: #fff;
+  width: 360px;
+  -webkit-transition: width 0.8s ease-in-out;
+  transition: width 0.8s ease-in-out;
+}
+.navbar .navbar-form .input-group button:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+.navbar .navbar-form .input-group:hover button {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+.navbar .navbar-form .input-group button {
+  font-size: 19px;
+  color: #fff;
+  border: 0px;
+}
+@media (max-width: 900px) {
+  .navbar .navbar-form .input-group:hover input {
+    width: 90%;
+    -webkit-transition: width 0.8s ease-in-out;
+    transition: width 0.8s ease-in-out;
+  }
+}
+/*panel面板*/
+.panel {
+   padding-top: 75px;
+   background:transparent;
+}
+
+.panel .container{
+ max-width: 1300px;
+}
+
+.panel .row{
+  margin-bottom: 20px;
+}
+.panel-item{
+  background:red;
+}
+

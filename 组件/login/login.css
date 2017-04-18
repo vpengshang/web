@@ -1,0 +1,155 @@
+/* 
+*  登录组件：css命名采用使用bem(Block Element Modefied)
+* 
+*/
+
+/*
+* 通用样式
+*/
+.hide{
+display: none;
+}
+.color-red{
+    color:#f90707;
+}
+/*
+* modar 遮罩层
+*/
+.modal-backdrop{
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+   background: #000;
+   opacity:0.45;
+}
+.sc-login-panel{
+    position: absolute;
+    left:50%;
+    top:50%;
+    border:1px solid #e0e0e0;
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,50%);
+    -webkit-transition: translate(-50%,-50%);
+    transition: translate(-50%,-50%);
+    max-width: 280px;
+    min-width: 250px;
+    width:80%;
+    color:#333;
+    line-height: 2.0rem;
+    font-weight: normal;
+    background-color:#fff;
+    border-radius: 0.5rem;
+
+}
+.login-title{
+    width:100%;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/*
+*close login panel
+*/
+ .close-btn{
+     position: absolute;
+     line-height:normal;
+     top:3px;
+     right: 5px;
+}
+.close{
+    display: inline-block; /*line-height自动继承祖元素*/
+    width:16px;
+    height: 16px;
+    background:url(img/close.png);
+    background-position:0px 0px;  /*设置值为百分比时=(containerwidth-imgWidth)*%*/
+}
+.close:hover{
+    -webkit-transform:scale(1.3);
+    transform:scale(1.3);
+
+}
+.sc-login_title{
+    line-height: 40px;
+    font-size:16px;
+    padding: 0px 8px;
+   /* border-bottom: 1px solid #e0e0e0;*/
+    margin: 0px;
+    text-align: center;
+}
+
+/*
+*
+* input 输入区域
+*/
+.sc-login_input{
+    padding:0px 20px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.input-group{
+  font-size: 14px;
+  margin:8px 0;
+  position: relative;
+}
+
+.input-group .label{
+    display: inline-block;
+    position: absolute;
+    left:0px;
+    width:3.0rem;
+
+}
+.input-group .input{
+    border:1px solid #e0e0e0;
+    width:100%;
+    padding:4px 6px;
+    padding-left: 3.0rem;
+    line-height: 20px;
+    border-radius: 3px;
+    box-sizing:border-box;
+}
+.input-bottom-tip{
+    width:100%;
+    height: 15px;
+    font-size: 12px;
+    text-align: left;
+    padding:0px 10px;
+    margin:0px;
+}
+
+.sc-login_btn{
+    display: block;
+}
+/*
+*  bottom登陆提交按钮
+*/
+.login-btn{
+    width:100%;
+    line-height: 45px;
+    border:0px;
+    text-align: center;
+    font-size:16px;
+    color: #fff;
+    background-color: #3194d0;
+    margin: 0px;
+    border-radius: 3px;
+}
+.login-btn:focus{
+   box-shadow: 0 0 1px 1px #3194d0;
+   -webkit-transition: all 0.4s linear;
+   -webkit-transition: all 0.1s linear;
+   transition: all 0.1s linear;
+}
+.btn{
+    display:inline-block;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 16px;
+    font-weight: normal;
+    border-radius: 4px;
+    border:1px solid transparent;
+}
